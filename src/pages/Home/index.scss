@@ -1,0 +1,15 @@
+.home {
+  .tabBar {
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    .iconfont {
+      font-size: 25px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
