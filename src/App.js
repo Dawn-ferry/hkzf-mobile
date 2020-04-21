@@ -7,8 +7,7 @@ import Error from './pages/Error'
 class App extends React.Component {
   render() {
     return (<Router>
-      <div>
-        <h1>  这是app组价</h1>
+      <>
         <Switch>
           <Redirect exact from="/" to="/home"></Redirect>
           <Route path='/home' component={Home}></Route>
@@ -16,7 +15,7 @@ class App extends React.Component {
           <Route path='/map' component={Map}></Route>
           <Route component={Error}></Route>
         </Switch>
-      </div>
+      </>
     </Router>)
   }
 }

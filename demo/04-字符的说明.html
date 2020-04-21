@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const str = 'Hello|world!'
+      const arr = ['H', 'e', 'l', 'l', '0']
+      const a = str.split('|')
+      console.log(a)
+      console.log(str)
+      // slice可用于数组与字符串，返回一个新的数组，原数组不改变
+      var b = str.slice(0, 5)
+      console.log(b)
+      var c = arr.slice(0, 3)
+      console.log(c)
+      // splice 只能操作数组，不能对字符进行操作（需要进行分割转换成数组格式），返回被删除的元素组成的数组 ，会改变原始数组。
+      const d = arr.splice(0, 2)
+      console.log(d)
+      console.log(arr)
+    </script>
+  </body>
+</html>

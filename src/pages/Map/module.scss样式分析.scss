@@ -1,0 +1,13 @@
+.map {
+  .red {
+    background-color: red;
+  }
+  .blue {
+    background-color: blue;
+  }
+  :global {
+    .icon-ind {
+      font-size: 80px !important;
+    }
+  }
+}

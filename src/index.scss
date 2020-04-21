@@ -4,9 +4,12 @@ $color: #fff;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+  touch-action: pan-y;
 }
 html,
-body {
+body,
+#root,
+.App {
   height: 100%;
 }
 body {

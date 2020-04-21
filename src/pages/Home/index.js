@@ -10,15 +10,22 @@ import { TabBar } from 'antd-mobile'
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props.location.pathname);
+
     this.state = {
-      // 选择的图标
-      selectedTab: 'blueTab',
+      // 选中的图标
+      selectedTab: this.props.location.pathname,
+      tabs: [
+        { name: '首页', path: '/home', icon: 'icon-ind' },
+        { name: '找房', path: '/home/house', icon: 'icon-findHouse' },
+        { name: '资讯', path: '/home/news', icon: ' icon-infom' },
+        { name: '个人中心', path: '/home/user', icon: 'icon-my' },
+      ]
     };
   }
   render() {
     return (<Router>
       <div className='home'>
-        <h1> 这是home组价</h1>
         <Switch>
           <Route exact path="/home" component={Index}></Route>
           <Route path='/home/house' component={House}></Route>
@@ -35,86 +42,31 @@ class Home extends React.Component {
             // 全局tabbar组件背景色
             barTintColor="#ddd"
           >
-            <TabBar.Item
-              // 标题
-              title="首页"
-              key="首页"
-              // 未选中图标的样式
-              icon={<span className="iconfont icon-ind"></span>}
-              // 选中图标的样式
-              selectedIcon={<span className="iconfont icon-ind"></span>}
-              // 图标即字体选中的起的名字
-              selected={this.state.selectedTab === 'blueTab'}
-              // 选中的逻辑
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'blueTab',
-                });
-                // 使用编程式导航跳转路由
-                this.props.history.push('/home')
-              }}
-            >
-            </TabBar.Item>
-            <TabBar.Item
-              // 标题
-              title="找房"
-              key="找房"
-              // 未选中图标的样式
-              icon={<span className="iconfont icon-ind"></span>}
-              // 选中图标的样式
-              selectedIcon={<span className="iconfont icon-ind"></span>}
-              // 图标即字体选中的起的名字
-              selected={this.state.selectedTab === 'redTab'}
-              // 选中的逻辑
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'redTab',
-                });
-                // 使用编程式导航跳转路由
-                this.props.history.push('/home/house')
-              }}
-            >
-            </TabBar.Item>
-            <TabBar.Item
-              // 标题
-              title="资讯"
-              key="资讯"
-              // 未选中图标的样式
-              icon={<span className="iconfont icon-ind"></span>}
-              // 选中图标的样式
-              selectedIcon={<span className="iconfont icon-ind"></span>}
-              // 图标即字体选中的起的名字
-              selected={this.state.selectedTab === 'greenTab'}
-              // 选中的逻辑
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'greenTab',
-                });
-                // 使用编程式导航跳转路由
-                this.props.history.push('/home/news')
-              }}
-            >
-            </TabBar.Item>
-            <TabBar.Item
-              // 标题
-              title="个人中心"
-              key="个人中心"
-              // 未选中图标的样式
-              icon={<span className="iconfont icon-ind"></span>}
-              // 选中图标的样式
-              selectedIcon={<span className="iconfont icon-ind"></span>}
-              // 图标即字体选中的起的名字
-              selected={this.state.selectedTab === 'yellowTab'}
-              // 选中的逻辑
-              onPress={() => {
-                this.setState({
-                  selectedTab: 'yellowTab',
-                });
-                // 使用编程式导航跳转路由
-                this.props.history.push('/home/user')
-              }}
-            >
-            </TabBar.Item>
+            {
+              this.state.tabs.map((item) => (
+                <TabBar.Item
+                  // 标题
+                  title={item.name}
+                  key={item.name}
+                  // 未选中图标的样式
+                  icon={<span className={`iconfont ${item.icon}`}></span>}
+                  // 选中图标的样式
+                  selectedIcon={<span className={`iconfont ${item.icon}`}></span>}
+                  // 图标即字体选中的起的名字
+                  selected={this.state.selectedTab === item.path}
+                  // 选中的逻辑
+                  onPress={() => {
+                    this.setState({
+                      selectedTab: item.path,
+                    });
+                    // 使用编程式导航跳转路由
+                    this.props.history.push(item.path)
+                  }}
+                >
+                </TabBar.Item>
+              ))
+            }
+
           </TabBar>
         </div>
       </div>

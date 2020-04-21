@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+      Array.from(参数)语法解析:返回一个新数组，接受一个数组和伪数组
+
+    -->
+    <script>
+      const arr = [1, 2, 3, 5, 4].push(5)
+      // arr.push(5)
+      console.log(arr)
+
+      // const newArr = Array.from(arr)
+      // 调用数组的方法
+      // 使用push方法返回的是数组的长度
+      const newArr = Array.from(arr).push(45)
+      // const newArr = Array.from(arr).concat([1, 2, 56])
+      console.log(newArr)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // .For...In 声明用于对数组或者对象的属性进行循环/迭代 遍历操作，对对对象操作较多。
+      const arr = ['a', 'c', 'a', 'b', 'b', 'c', 'c', 'a', 'a', 'a']
+      for (x in arr) {
+        console.log(arr[x])
+      }
+      // .判断对象是否为数组/对象的元素/属性：
+      /* 
+      格式：（变量 in 对象）......注意，，，
+    　　当“对象”为数组时，“变量”指的是数组的“索引”；
+    　　当“对象”为对象是，“变量”指的是对象的“属性”。
+      
+      */
+
+      obj = { a: 'hai', b: 'xx' }
+      const bool = 66 in arr
+      console.log(bool)
+      const xx = 'a' in obj
+      console.log(xx)
+    </script>
+  </body>
+</html>

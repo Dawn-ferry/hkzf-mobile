@@ -5,7 +5,7 @@ import House from './House'
 import News from './News'
 import User from './User'
 // 导入样式
-import './index.scss'
+import './Link样式.scss'
 class Home extends React.Component {
   render() {
     return (<Router>

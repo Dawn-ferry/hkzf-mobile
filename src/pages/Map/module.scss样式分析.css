@@ -1,0 +1,18 @@
+.blue {
+  background-color: blue;
+}
+/* 最好使用驼峰命名样式的类名 */
+.UserName {
+  color: skyblue;
+}
+/* 这种类名,在css module如何获取，通过方括号语法 */
+.font-sizes {
+  font-size: 50px;
+  height: 50px;
+}
+/* 全局样式，不需要 css ,module 进行修改
+多用于是第三方的样式
+*/
+:global(.icon-ind) {
+  font-size: 80px !important;
+}
